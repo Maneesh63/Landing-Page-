@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+   <!---- <link rel="stylesheet" href="styles.css">-->
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar {
+            position: fixed;
+            width: 100%;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        .navbar li {
+            padding: 14px 20px;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        section {
+            padding: 100px;
+            height: 100vh;
+        }
+        
+        #home {
+            background-color: #f4f4f4;
+        }
+        
+        #about {
+            background-color: #e2e2e2;
+        }
+        
+        #services {
+            background-color: #ccc;
+        }
+        
+        #contact {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1>Welcome to Our Website</h1>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+    </section>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbar = document.querySelector('.navbar');
+            const navLinks = document.querySelectorAll('.navbar a');
+        
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        
+            navLinks.forEach(link => {
+                link.addEventListener('mouseover', function() {
+                    this.style.backgroundColor = '#444';
+                    this.style.color = 'white';
+                });
+        
+                link.addEventListener('mouseout', function() {
+                    this.style.backgroundColor = '';
+                    this.style.color = '';
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
